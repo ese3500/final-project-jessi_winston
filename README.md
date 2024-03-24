@@ -2,7 +2,7 @@
 # final-project-skeleton
 
     * Team Name: 
-    * Team Members: 
+    * Team Members: Jessi Jha, Winston Nguyen
     * Github Repository URL: 
     * Github Pages Website URL: [for final submission]
     * Description of hardware: (embedded hardware, laptop, etc) 
@@ -15,40 +15,73 @@ In a few sentences, describe your final project. This abstract will be used as t
 
 ### 2. Motivation
 
-What is the problem that you are trying to solve? Why is this project interesting? What is the intended purpose?
+Robots that mimic human motion in real-time can have exciting and societally beneficial applications - from helping clean hazard sites to assisting individuals with limited mobility, these robots can be utilized in a variety of ways.
+
+Our goal/solution with this project is to create a robot arm that uses a microcontroller, servomotor, accelerometer, and other potential add-ons to mimic human motion. This project would serve as a stepping stone to developing more involved robots that can aid in situations such as disaster/hazard relief or mobile assistance.
 
 ### 3. Goals
 
-These are to help guide and direct your progress.
+By the end of the project, we would like to have a robotic arm that utilizes sensor data to create motion.
+
+We will design a system where the robotic arm responds to changes in acceleration of the user's hand, such that when the user moves
+their hand in a certain way, the servo motors that control the arm change their PWM accordingly. 
 
 ### 4. Software Requirements Specification (SRS)
 
-Formulate key software requirements here.
+This project requires the transmission and collection of sensor data from the accelerometers/flex sensors to the Atmega. In addition, we will use PWM changes to control the motors and ADC to convert sensor data to the digital values that will change the PWM; each of these fucntions require the appropriate software componments.
 
 ### 5. Hardware Requirements Specification (HRS)
 
-Formulate key hardware requirements here.
+Robotic Arm Model:
+- https://cults3d.com/en/3d-model/various/arduino-based-robot-arm-howtomechatronics
+
+Atmega238PB:
+
+Servo Motors:
+
+Battery Pack:
+
+Flex Sensors:
+
+Accelerometer:
+
+<!-- 
+
+Some things we may need:
+- Servo Driver?
+- Some board that sends data between both boards (is this the Feather? I am not sure)
+
+ -->
+
 
 ### 6. MVP Demo
 
-What do you expect to accomplish by the first milestone?
+By the MVP Demo, the arm will be able to move with respect to the the motion of the user.
 
 ### 7. Final Demo
 
-What do you expect to achieve by the final demonstration or after milestone 1?
+By the final we would like to include fun add ons to the arm. We want to toggle the arm between being motion
+controlled and being controlled remotely. Additionally, we want to include a buzzer that will emit frequencies 
+based on the position of the arm. 
 
 ### 8. Methodology
 
-What is your approach to the problem?
+We will first focus on ensuring we are able to control the servo motors from sensor data. Then we will consider how we want 
+the motors to move based on sensor data; at this point we will begin to assemble the arm. Once the main functionality has been 
+implemented, we will begin to consider other fun add ons our arm can use. 
 
 ### 9. Components
 
-What major components do you need and why?
+Robotic Arm:
+The robotic arm will be controlled by servos, which will be powered by the Atmega. The Atmega will recieve data from the sensors 
+which will determine the PWM of the motors. The robotic arm will be 3D printed.
+
+Glove:
+The glove will have a mixture of accelerometers and flex sensors. The flex sensor will be positioned on the fingers of the glove, while accelerometers will be placed on the back of the hand. 
 
 ### 10. Evaluation
 
-What is your metric for evaluating how well your product/solution solves the problem? Think critically on this section. Having a boolean metric such as “it works” is not very useful. This is akin to making a speaker and if it emits sound, albeit however terrible and ear wrenching, declare this a success.
-It is recommended that your project be something that you can take pride in. Oftentimes in interviews, you will be asked to talk about projects you have worked on.
+We will use a demonstration where the user needs to control the arm with the glove to pick up the block. If the user is able to control the arms motion in their manner, we will consider the project a success.
 
 ### 11. Timeline
 
