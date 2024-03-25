@@ -35,9 +35,11 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 - SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
 - SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
 - SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
-- SRS 04: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
-- SRS 05: The software shall support calibration mode for sensors to accommodate different user hand sizes and flex ranges.
+- SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
+- SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
 - SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
+- SRS 08: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+- SRS 09: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
 ### 5. Hardware Requirements Specification (HRS)
 
