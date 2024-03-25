@@ -38,8 +38,8 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 - SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
 - SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
 - SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
-- SRS 08: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
-- SRS 09: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
+- SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+- SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
 ### 5. Hardware Requirements Specification (HRS)
 
