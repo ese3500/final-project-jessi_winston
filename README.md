@@ -22,8 +22,22 @@ What is the problem that you are trying to solve? Why is this project interestin
 These are to help guide and direct your progress.
 
 ### 4. Software Requirements Specification (SRS)
+#### 4.1 Overview
+This project aims to develop a software interface for a gesture-controlled robotic arm. The software will interpret hand gestures captured by a robotic glove equipped with flex sensors and an accelerometer, translating them into precise movements of a six-axis robotic arm
 
-Formulate key software requirements here.
+#### 4.2 Users
+The primary users of this software will be hobbyists, educators, and researchers interested in robotics, human-machine interaction, and gesture control technologies. Users with a basic understanding of embedded programming and hardware assembly can operate and customize the robotic arm.
+
+#### 4.3 Definitions, Abbreviations
+Here you will define any special terms acronyms or abbreviation you plan to use for software
+
+#### 4.4 Functionality
+- SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
+- SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
+- SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
+- SRS 04: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
+- SRS 05: The software shall support calibration mode for sensors to accommodate different user hand sizes and flex ranges.
+- SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
 
 ### 5. Hardware Requirements Specification (HRS)
 
