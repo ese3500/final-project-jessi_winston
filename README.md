@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
 # final-project-skeleton
 
-    * Team Name: (Courtesy of ChatGPT: RoboWave? Armantics?)
+    * Team Name: RoboWave
     * Team Members: Jessi Jha, Winston Nguyen
     * Github Repository URL: 
     * Github Pages Website URL: [for final submission]
@@ -32,26 +32,19 @@ This project requires the transmission and collection of sensor data from the ac
 
 ### 5. Hardware Requirements Specification (HRS)
 
-Robotic Arm Model:
-- https://cults3d.com/en/3d-model/various/arduino-based-robot-arm-howtomechatronics
+HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
-Atmega238PB:
+HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
 
-Servo Motors:
+HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
-Battery Pack:
+HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
 
-Flex Sensors:
+HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega. The will be poweer
 
-Accelerometer:
+HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V. 
 
-<!-- 
-
-Some things we may need:
-- Servo Driver?
-- Some board that sends data between both boards (is this the Feather? I am not sure)
-
- -->
+HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
 
 
 ### 6. MVP Demo
@@ -73,11 +66,10 @@ implemented, we will begin to consider other fun add ons our arm can use.
 ### 9. Components
 
 Robotic Arm:
-The robotic arm will be controlled by servos, which will be powered by the Atmega. The Atmega will recieve data from the sensors 
-which will determine the PWM of the motors. The robotic arm will be 3D printed.
+The robotic arm will be controlled by servos, which will be powered by the Atmega. The Atmega will recieve data from the ESP32, which communicates with the flex sensors and accelerometers. The sensors  will determine the PWM of the motors. The robotic arm will be 3D printed.
 
 Glove:
-The glove will have a mixture of accelerometers and flex sensors. The flex sensor will be positioned on the fingers of the glove, while accelerometers will be placed on the back of the hand. 
+The glove will contain an accelerometer and flex sensors. The flex sensor will be positioned on the fingers of the glove, while accelerometers will be placed on the back of the hand. Both of these sensors will be connected to the ESP32.
 
 ### 10. Evaluation
 
