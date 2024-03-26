@@ -1,17 +1,16 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
 # final-project-skeleton
 
-    * Team Name: 
-    * Team Members: 
-    * Github Repository URL: 
+    * Team Name: RoboWave
+    * Team Members: Jessi Jha, Truong (Winston) Nguyen
+    * Github Repository URL: https://github.com/ese3500/final-project-jessi_winston/tree/main
     * Github Pages Website URL: [for final submission]
     * Description of hardware: (embedded hardware, laptop, etc) 
 
 ## Final Project Proposal
 
 ### 1. Abstract
-
-In a few sentences, describe your final project. This abstract will be used as the description in the evaluation survey forms.
+This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural and immersive interaction with the robot arm. 
 
 ### 2. Motivation
 
