@@ -1,9 +1,14 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
-# final-project-skeleton
+# RoboWave Project Proposal
 
     * Team Name: RoboWave
+<<<<<<< HEAD
     * Team Members: Jessi Jha, Truong (Winston) Nguyen
     * Github Repository URL: https://github.com/ese3500/final-project-jessi_winston/tree/main
+=======
+    * Team Members: Jessi Jha, Winston Nguyen
+    * Github Repository URL: 
+>>>>>>> e01819dc63a47bbb9ad5b75b8686428b6486850e
     * Github Pages Website URL: [for final submission]
     * Description of hardware: (embedded hardware, laptop, etc) 
 
@@ -46,7 +51,23 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 
 ### 5. Hardware Requirements Specification (HRS)
 
+<<<<<<< HEAD
 - HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
+=======
+#### 4.1 Overview
+There will be two components to the project - a glove with motion sensors and a 3D printed arm controlled by servo motors. The sensor data will be sent ot the the Atmega through the ESP32 board, and the microcontroller will control the PWM of the motors.
+
+#### 4.2 Definitions, Abbreviations
+
+ESP32: Wifi/Bluetooth Module
+
+Atmega: The microcontroller that shaller be used for the project, short for Atmega328PB. 
+
+
+#### 4.3 Functionality
+
+HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
+>>>>>>> e01819dc63a47bbb9ad5b75b8686428b6486850e
 
 - HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
 
