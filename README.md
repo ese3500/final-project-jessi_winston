@@ -21,7 +21,9 @@ Our goal/solution with this project is to create a robot arm that uses a microco
 
 ### 3. Goals
 
-These are to help guide and direct your progress.
+By the end of the project, we would like to have a robotic arm that utilizes sensor data to create motion.
+
+We will design a system where the robotic arm responds to changes in acceleration of the user's hand, such that when the user moves their hand in a certain way, the servo motors that control the arm change their PWM accordingly.
 
 ### 4. Software Requirements Specification (SRS)
 #### 4.1 Overview
@@ -44,6 +46,18 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 - SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
 ### 5. Hardware Requirements Specification (HRS)
+
+#### 4.1 Overview
+There will be two components to the project - a glove with motion sensors and a 3D printed arm controlled by servo motors. The sensor data will be sent ot the the Atmega through the ESP32 board, and the microcontroller will control the PWM of the motors.
+
+#### 4.2 Definitions, Abbreviations
+
+ESP32: Wifi/Bluetooth Module
+
+Atmega: The microcontroller that shaller be used for the project, short for Atmega328PB. 
+
+
+#### 4.3 Functionality
 
 HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
