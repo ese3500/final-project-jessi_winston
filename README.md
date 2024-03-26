@@ -14,7 +14,9 @@ This project enables users to manipulate a robotic arm through intuitive hand mo
 
 ### 2. Motivation
 
-What is the problem that you are trying to solve? Why is this project interesting? What is the intended purpose?
+Robots that mimic human motion in real-time can have exciting and societally beneficial applications - from helping clean hazard sites to assisting individuals with limited mobility, these robots can be utilized in a variety of ways.
+
+Our goal/solution with this project is to create a robot arm that uses a microcontroller, servomotor, accelerometer, and other potential add-ons to mimic human motion. This project would serve as a stepping stone to developing more involved robots that can aid in situations such as disaster/hazard relief or mobile assistance.
 
 ### 3. Goals
 
@@ -42,23 +44,39 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 
 ### 5. Hardware Requirements Specification (HRS)
 
-Formulate key hardware requirements here.
+HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
+
+HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
+
+HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
+
+HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
+
+HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega. The will be poweer
+
+HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V. 
+
+HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
 
 ### 6. MVP Demo
 
-What do you expect to accomplish by the first milestone?
+By the MVP Demo, the arm will be able to move with respect to the the motion of the user.
 
 ### 7. Final Demo
 
-What do you expect to achieve by the final demonstration or after milestone 1?
+By the final we would like to include fun add ons to the arm. We want to toggle the arm between being motion controlled and being controlled remotely. Additionally, we want to include a buzzer that will emit frequencies based on the position of the arm.
 
 ### 8. Methodology
 
-What is your approach to the problem?
+We will first focus on ensuring we are able to control the servo motors from sensor data. Then we will consider how we want the motors to move based on sensor data; at this point we will begin to assemble the arm. Once the main functionality has been implemented, we will begin to consider other fun add ons our arm can use. 
 
 ### 9. Components
 
-What major components do you need and why?
+Robotic Arm:
+The robotic arm will be controlled by servos, which will be powered by the Atmega. The Atmega will recieve data from the ESP32, which communicates with the flex sensors and accelerometers. The sensors  will determine the PWM of the motors. The robotic arm will be 3D printed.
+
+Glove:
+The glove will contain an accelerometer and flex sensors. The flex sensor will be positioned on the fingers of the glove, while accelerometers will be placed on the back of the hand. Both of these sensors will be connected to the ESP32.
 
 ### 10. Evaluation
 
@@ -67,7 +85,7 @@ It is recommended that your project be something that you can take pride in. Oft
 
 ### 11. Timeline
 
-This section is to help guide your progress over the next few weeks. Feel free to adjust and edit the table below to something that would be useful to you. Really think about what you want to accomplish by the first milestone.
+We will use a demonstration where the user needs to control the arm with the glove to pick up the block. If the user is able to control the arms motion in their manner, we will consider the project a success.
 
 | **Week**            | **Task** | **Assigned To**    |
 |----------           |--------- |------------------- |
