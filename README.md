@@ -10,7 +10,7 @@
 ## Final Project Proposal
 
 ### 1. Abstract
-This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural and immersive interaction with the robot arm. 
+This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural interaction with the robot arm. 
 
 ### 2. Motivation
 
@@ -20,7 +20,9 @@ Our goal/solution with this project is to create a robot arm that uses a microco
 
 ### 3. Goals
 
-These are to help guide and direct your progress.
+By the end of the project, we would like to have a robotic arm that utilizes sensor data to create motion.
+
+We will design a system where the robotic arm responds to changes in acceleration of the user's hand, such that when the user moves their hand in a certain way, the servo motors that control the arm change their PWM accordingly.
 
 ### 4. Software Requirements Specification (SRS)
 #### 4.1 Overview
@@ -44,19 +46,19 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 
 ### 5. Hardware Requirements Specification (HRS)
 
-HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
+- HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
-HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
+- HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
 
-HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
+- HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
-HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
+- HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
 
-HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega. The will be poweer
+- HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega. The will be poweer
 
-HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V. 
+- HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V. 
 
-HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
+- HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
 
 ### 6. MVP Demo
 
@@ -72,16 +74,17 @@ We will first focus on ensuring we are able to control the servo motors from sen
 
 ### 9. Components
 
-Robotic Arm:
+- Robotic Arm:
 The robotic arm will be controlled by servos, which will be powered by the Atmega. The Atmega will recieve data from the ESP32, which communicates with the flex sensors and accelerometers. The sensors  will determine the PWM of the motors. The robotic arm will be 3D printed.
 
-Glove:
+- Glove:
 The glove will contain an accelerometer and flex sensors. The flex sensor will be positioned on the fingers of the glove, while accelerometers will be placed on the back of the hand. Both of these sensors will be connected to the ESP32.
 
 ### 10. Evaluation
 
-What is your metric for evaluating how well your product/solution solves the problem? Think critically on this section. Having a boolean metric such as “it works” is not very useful. This is akin to making a speaker and if it emits sound, albeit however terrible and ear wrenching, declare this a success.
-It is recommended that your project be something that you can take pride in. Oftentimes in interviews, you will be asked to talk about projects you have worked on.
+- Gesture Recognition Accuracy: The software should correctly interpret hand gestures with an accuracy rate of at least 90%. This will be measured by comparing the intended gesture against the gesture recognized by the system over a series of tests.
+- Response Time: The system should respond to human's gestures in a timely manner (less than 5 seconds). This will be quantified by measuring the time elapsed from the gesture initiation to the robotic arm’s movement.
+- User Task Completion Rate: Users should be able to complete predefined tasks using the robotic arm with a success rate of 90% or higher (such as picking a block). This metric will be assessed through user testing, where participants attempt to complete tasks and their success rates are recorded.
 
 ### 11. Timeline
 
@@ -89,11 +92,11 @@ We will use a demonstration where the user needs to control the arm with the glo
 
 | **Week**            | **Task** | **Assigned To**    |
 |----------           |--------- |------------------- |
-| Week 1: 3/24 - 3/31 |          |                    |
-| Week 2: 4/1 - 4/7   |          |                    |
-| Week 3: 4/8 - 4/14  |          |                    |
-| Week 4: 4/15 - 4/21 |          |                    |
-| Week 5: 4/22 - 4/26 |          |                    |
+| Week 1: 3/24 - 3/31 |  Project Kickoff & Requirement gathering    |  Jessi and Winston                  |
+| Week 2: 4/1 - 4/7   |  - Create firmware architecture and begin coding for a basic skeleton <br> - Design and print some 3D-printed arm parts        |  Jessi (3D printing)  and Winston (firmware skeleton)               |
+| Week 3: 4/8 - 4/14  |  - Assemble all hardware components of robotic arm and the circuit <br>- Conduct testing of the arm response to sensor <br>- Update/ modify prototype     |  Jessi and Winston     |
+| Week 4: 4/15 - 4/21 |- Optimize firmware architecture <br> - Improve the response of the arm and add add-on features     |  Jessi and Winston                     |
+| Week 5: 4/22 - 4/26 |- Finalize the design           |    Jessi and Winston                |
 
 ### 12. Proposal Presentation
 
