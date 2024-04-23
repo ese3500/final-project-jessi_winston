@@ -32,6 +32,11 @@ This project requires the transmission and collection of sensor data from the ac
 
 ### 5. Hardware Requirements Specification (HRS)
 
+4.1
+There will be two components to the project - a glove with motion sensors and a 3D printed arm controlled by servo motors. The sensor data will be sent ot the the Atmega through the ESP32 board, and the microcontroller will control the PWM of the motors.
+
+4.2
+
 HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
 HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
@@ -53,15 +58,11 @@ By the MVP Demo, the arm will be able to move with respect to the the motion of 
 
 ### 7. Final Demo
 
-By the final we would like to include fun add ons to the arm. We want to toggle the arm between being motion
-controlled and being controlled remotely. Additionally, we want to include a buzzer that will emit frequencies 
-based on the position of the arm. 
+By the final we would like to include fun add ons to the arm. We want to toggle the arm between being motion controlled and being controlled remotely. Additionally, we want to include a buzzer that will emit frequencies based on the position of the arm.
 
 ### 8. Methodology
 
-We will first focus on ensuring we are able to control the servo motors from sensor data. Then we will consider how we want 
-the motors to move based on sensor data; at this point we will begin to assemble the arm. Once the main functionality has been 
-implemented, we will begin to consider other fun add ons our arm can use. 
+We will first focus on ensuring we are able to control the servo motors from sensor data. Then we will consider how we want the motors to move based on sensor data; at this point we will begin to assemble the arm. Once the main functionality has been implemented, we will begin to consider other fun add ons our arm can use. 
 
 ### 9. Components
 
