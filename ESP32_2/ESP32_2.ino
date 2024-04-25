@@ -45,8 +45,6 @@ void loop() {
   // Wait for a TCP client from ESP32 #1:
   WiFiClient client = TCPserver.available();
 
-  Serial.print(123);
-
   if (client) {
     // Read the command from the TCP client:
     char command = client.read();
