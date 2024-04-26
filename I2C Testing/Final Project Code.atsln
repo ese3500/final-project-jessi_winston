@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "I2C Testing", "Final Project Code\I2C Testing.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
-EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Atmega info to ESP", "Atmega info to ESP\Atmega info to ESP.cproj", "{204EAA88-75CD-4868-AAF2-64592648F6B6}"
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ESP to Atmega", "ESP to Atmega\ESP to Atmega.cproj", "{EBC7F68F-78A6-4922-83AA-A9746C1D49F3}"
@@ -15,10 +13,6 @@ Global
 		Release|AVR = Release|AVR
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
 		{204EAA88-75CD-4868-AAF2-64592648F6B6}.Debug|AVR.ActiveCfg = Debug|AVR
 		{204EAA88-75CD-4868-AAF2-64592648F6B6}.Debug|AVR.Build.0 = Debug|AVR
 		{204EAA88-75CD-4868-AAF2-64592648F6B6}.Release|AVR.ActiveCfg = Release|AVR

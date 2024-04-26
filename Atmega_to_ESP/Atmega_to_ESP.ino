@@ -5,12 +5,12 @@ const char* ssid = "Ninja Turtle";
 const char* password = "applepie";
 const char* serverIP = "192.168.252.51";
 const int serverPort = 80;
-
+String data;
 WiFiClient client;
 
 void setup() {
     Serial.begin(9600); // Initialize serial monitor
-    Serial2.begin(9600); // Initialize serial communication with ATmega
+    Serial2.begin(9600, SERIAL_8N2); // Initialize serial communication with ATmega
   
     // Connect to Wi-Fi
     WiFi.begin(ssid, password);
@@ -21,18 +21,21 @@ void setup() {
     Serial.println("Connected to WiFi");
 }
 
-float randomFloat(float minVal, float maxVal) {
-  return minVal + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (maxVal - minVal)));
-}
+
 
 void loop() {
-    randomSeed(analogRead(0));
     // Check if random number is available from ATmega
     if (Serial2.available()) {
+
+      // float test = Serial2.parseFloat();
+      // Serial.print("Received Data from ATmega: ");
+      // Serial.println(test);
+
+      
         // Read the incoming random number from ATmega
-        float randomNumber = Serial2.parseFloat();
-        Serial.print("Received random number from ATmega: ");
-        Serial.println(randomNumber);
+        data = Serial2.readStringUntil('\n');
+        Serial.print("Received Data from ATmega: ");
+        Serial.println(data);
 
         // Connect to server if not already connected
         if (!client.connected()) {
@@ -44,20 +47,29 @@ void loop() {
             }
         }
 
-        // Send the random number to the server
-        // float randomNumberTest = randomFloat(0.0, 1.0);
-        // client.println(randomNumberTest, 4); // Send float with 4 decimal places
-        // Serial.print("Sent random number to server: ");
-        // Serial.println(randomNumberTest, 4); // Print float with 4 decimal places
+        //Send the data to the server
+        client.println(data); 
+        Serial.print("Sent Data to server: ");
+        Serial.println(data); // Print float with 4 decimal places
     }
 
-    float randomNumberTest = randomFloat(0.0, 1.0);
-        client.println(randomNumberTest, 4); // Send float with 4 decimal places
-        Serial.print("Sent random number to server: ");
-        Serial.println(randomNumberTest, 4); // Print float with 4 decimal places
+    // float randomNumberTest = randomFloat(0.0, 1.0);
+
+    //     //Send the random number to the server
+    //     client.println((String) randomNumber); // Send float with 4 decimal places
+    //     Serial.print("Sent random number to server: ");
+    //     Serial.println((String) randomNumber); // Print float with 4 decimal places
+
+
+    // float randomNumberTest = randomFloat(0.0, 1.0);
+    //     client.println(randomNumberTest, 4); // Send float with 4 decimal places
+    //     Serial.print("Sent random number to server: ");
+    //     Serial.println(randomNumberTest, 4); // Print float with 4 decimal places
 
     // Delay before next iteration
-    delay(2000); // Adjust delay as needed
+    //Serial.println("wtf");
+
+    delay(200); // Adjust delay as needed
 }
 
 

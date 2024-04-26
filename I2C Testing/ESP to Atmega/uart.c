@@ -39,7 +39,7 @@ void UART0_send(unsigned char data)
 void UART1_send(unsigned char data)
 {
 	// Wait for empty transmit buffer
-	while(!(UCSR1A & (1<<UDRE1)));
+	while(!(UCSR1A & (1<<UDRE0)));
 	// Put data into buffer and send data
 	UDR1 = data;
 	
@@ -50,7 +50,7 @@ void UART0_putstring(char* StringPtr)
   while(*StringPtr != 0x00)
   {
     UART0_send(*StringPtr);
-  StringPtr++;
+	StringPtr++;
   }
 }
 
@@ -65,6 +65,10 @@ void UART1_putstring(char* StringPtr)
 
 // Function to check if data is available to read from UART0
 int UART0_available() {
+	int a = UCSR0A & (1 << RXC0);
+	char buffer[10];
+	itoa(a, buffer, 10);
+	UART0_putstring(buffer);
 	return (UCSR0A & (1 << RXC0)); // Check Receive Complete flag
 }
 
@@ -75,7 +79,9 @@ int UART1_available() {
 
 // Function to read a byte from UART0
 unsigned char UART0_read() {
+	UART0_putstring("start reading");
 	while (!(UCSR0A & (1 << RXC0))); // Wait until data is received
+	UART0_putstring("data available");
 	return UDR0; // Return received data
 }
 

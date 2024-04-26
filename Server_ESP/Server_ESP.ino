@@ -6,9 +6,13 @@ const char* password = "applepie";
 
 WiFiServer server(80);
 
+float randomFloat(float minVal, float maxVal) {
+  return minVal + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (maxVal - minVal)));
+}
+
 void setup() {
   Serial.begin(9600);
-  Serial2.begin(9600); // Initialize Serial2 for communication with ATmega
+  Serial2.begin(9600, SERIAL_8N2); // Initialize Serial2 for communication with ATmega
   
   delay(10);
 
@@ -29,31 +33,43 @@ void setup() {
   Serial.println("Server started");
 }
 
+
 void loop() {
+  //Serial.println("Hello World");
   WiFiClient client = server.available();
   if (client) {
     Serial.println("New client connected");
     while (client.connected()) {
-      delay(2000);
+      //delay(200);
       if (client.available()) {
         // Read the incoming data
         String data = client.readStringUntil('\n');
         // Convert the received data to a float
         float randomNumber = data.toFloat();
         // Print the received random number
-        Serial.print("Received random number: ");
-        Serial.println(randomNumber, 4);
+        //Serial.print("Received random number: ");
+        //Serial.println(randomNumber, 4);
         
         // Send the random number to ATmega over UART
         // Convert float to string before sending
         char buffer[20];
+        buffer[20] = '\0';
         sprintf(buffer, "%.4f", randomNumber); // Format float with 4 decimal places
-        Serial2.println(buffer);
+        Serial2.print(data + ',');
+        Serial.print(data + ',');        
+        //Serial.println("Data: " + data);
       }
     }
+
     client.stop();
     Serial.println("Client disconnected");
-  }
+
+  } 
+
+
+  //  float randomNumberTest = randomFloat(0.0, 1.0);
+  // Serial2.println((String) randomNumberTest + ',');
+
 }
 
 
