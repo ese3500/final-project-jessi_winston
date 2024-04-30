@@ -4,7 +4,7 @@
     * Team Name: RoboWave
     * Team Members: Jessi Jha, Truong (Winston) Nguyen
     * Github Repository URL: https://github.com/ese3500/final-project-jessi_winston/tree/main
-    * Github Pages Website URL: https://github.com/ese3500/final-project-jessi_winston/edit/main/README.md
+    * Github Pages Website URL: https://ese3500.github.io/final-project-jessi_winston/
     * Description of hardware: 2 Atmega328PBs, 2 ESP32 Feathers, Accelerometer, 4 Servo Motors, 1 Flex Sensor 
 
 ## Final Project Proposal
