@@ -48,7 +48,7 @@ Here you will define any special terms acronyms or abbreviation you plan to use 
 
 - HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
-- HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
+-  HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
 
 - HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
@@ -135,23 +135,23 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 - HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
-- Final Project Reflection: HRS 03 was fulfilled.
+   - Final Project Reflection: HRS 03 was fulfilled.
 
 - HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
 
-- Final Project Reflection: HRS 04 was fulfilled.
+   - Final Project Reflection: HRS 04 was fulfilled.
 
 - HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega.
 
-- Final Project Reflection: HRS 05 was fulfilled.
+   - Final Project Reflection: HRS 05 was fulfilled.
 
 - HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V.
 
-- Final Project Reflection: HRS 06 was not fulfilled. It turns out that the servo driver was not nessecarily needed. We used a wall power supply to power the motors, while the atmega controlled their PWM.  
+   - Final Project Reflection: HRS 06 was not fulfilled. It turns out that the servo driver was not nessecarily needed. We used a wall power supply to power the motors, while the atmega controlled their PWM.  
 
 - HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
 
-- Final Project Reflection: HRS 07 was fulfilled.
+   - Final Project Reflection: HRS 07 was fulfilled.
 
 - NEW: HRS 08 - This project shall use a logic level shifter to ensure functional communication between the ESP32 and the Atmega328PB; these two devices have different power levels, 3.3V and 5V, respectively. 
 
