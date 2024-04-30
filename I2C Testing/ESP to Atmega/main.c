@@ -47,7 +47,7 @@ int main(void) {
 				// Add the character to the buffer
 				float_buffer[bufferIndex] = receivedChar;
 				buffer[bufferIndex] = receivedChar;
-				bufferIndex+=1; 
+				//bufferIndex+=1; 
 				
 			} else if (receivedChar == 'X') {
 				// Print the string (float number) using UART
@@ -55,7 +55,7 @@ int main(void) {
 				// Print the string (float number) using UART
 				UART0_putstring(float_buffer);
 				UART0_putstring(" ");
-				bufferIndex+=1; 
+				//bufferIndex+=1; 
 
 				gyro_x = atof(float_buffer);
 				
@@ -65,7 +65,7 @@ int main(void) {
 				// Print the string (float number) using UART
 				UART0_putstring(float_buffer);
 				UART0_putstring(" ");
-				bufferIndex+=1; 
+				//bufferIndex+=1; 
 				
 				gyro_y = atof(float_buffer);
 			
@@ -75,7 +75,7 @@ int main(void) {
 				// Print the string (float number) using UART
 				UART0_putstring(float_buffer);
 				UART0_putstring("/n");
-				bufferIndex+=1; 
+				//bufferIndex+=1; 
 
 				gyro_z = atof(float_buffer);
 				
