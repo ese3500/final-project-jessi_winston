@@ -1,11 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
-# RoboWave Project Proposal
+# RoboWave Project
 
     * Team Name: RoboWave
     * Team Members: Jessi Jha, Truong (Winston) Nguyen
     * Github Repository URL: https://github.com/ese3500/final-project-jessi_winston/tree/main
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc) 
+    * Github Pages Website URL: https://github.com/ese3500/final-project-jessi_winston/edit/main/README.md
+    * Description of hardware: 2 Atmega328PBs, 2 ESP32 Feathers, Accelerometer, 4 Servo Motors, 1 Flex Sensor 
 
 ## Final Project Proposal
 
@@ -103,9 +103,6 @@ We will use a demonstration where the user needs to control the arm with the glo
 Add your slides to the Final Project Proposal slide deck in the Google Drive.
 
 ## Final Project Report
-
-Don't forget to make the GitHub pages public website!
-If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
 
