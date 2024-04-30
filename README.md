@@ -127,11 +127,11 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 - HRS 01 – This robotic arm mechanism shall be based on Atmega328PB microcontroller.
 
-- Final Project Reflection: HRS 01 was fulfilled.
+   - Final Project Reflection: HRS 01 was fulfilled.
   
 - HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will communicate with the Atmega.
 
-- Final Project Reflection: HRS 02 was modified. We used another Atmega to recieve data from the flex sensor and the accelerometer, which then send the data to the ESP 32. This was done to add complexity to the project, using bare metal serial communication. However, during the final demo, this requirement was not implemented due to last minute complications. However, in the demo video, the full functionality of this requirement is demonstrated. 
+   - Final Project Reflection: HRS 02 was modified. We used another Atmega to recieve data from the flex sensor and the accelerometer, which then send the data to the ESP 32. This was done to add complexity to the project, using bare metal serial communication. However, during the final demo, this requirement was not implemented due to last minute complications. However, in the demo video, the full functionality of this requirement is demonstrated. 
 
 - HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
