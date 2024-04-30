@@ -35,13 +35,21 @@ The primary users of this software will be hobbyists, educators, and researchers
 Here you will define any special terms acronyms or abbreviation you plan to use for software
 
 #### 4.4 Functionality
+
 - SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
+  
 - SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
+  
 - SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
+  
 - SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
+  
 - SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
+  
 - SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
+  
 - SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+  
 - SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
 ### 5. Hardware Requirements Specification (HRS)
@@ -115,13 +123,50 @@ Add your slides to the Final Project Proposal slide deck in the Google Drive.
 ### 3. Results
 
 Results for the Demo:
-On demo day, we had a robotic arms with 4 degrees of freedom controlled by a wired "glove" connected with an accelerometer and flex sensor. 
+On demo day, we presented  a robotic arms with 4 degrees of freedom controlled by a wired "glove" connected with an accelerometer and flex sensor. 
+
+Results from the Video:
+In the video, we presented a robotic arms with 4 degrees of freedom controlled by a wireless "glove" connected with an accelerometer and flex sensor. 
+
 
 Results for final video:
 
 #### 3.1 Software Requirements Specification (SRS) Results
 
 Based on your quantified system performance, comment on how you achieved or fell short of your expected software requirements. You should be quantifying this, using measurement tools to collect data. (Winston?)
+
+- SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
+
+   - Final Project Reflection: SRS 01 
+  
+- SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
+
+  - Final Project Reflection: SRS 02 was fulfilled.
+  
+- SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
+
+  - Final Project Reflection: SRS 03 was fulfilled.
+  
+- SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
+
+  - Final Project Reflection: SRS 04 was fulfilled.
+  
+- SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
+
+  - Final Project Reflection: SRS 05 was fulfilled.
+  
+- SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
+
+  - Final Project Reflection: SRS 06 was fulfilled.
+  
+- SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+
+  - Final Project Reflection: SRS 07 was fulfilled.
+  
+- SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
+
+  - Final Project Reflection: SRS 08 was fulfilled
+
 
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
@@ -170,6 +215,10 @@ In terms of project next steps, I think it would be useful to add remote control
 ## References
 
 Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.
+
+3D Printed Arm: https://www.instructables.com/EEZYbotARM/
+
+IMU Driver: 
 
 ## Github Repo Submission Resources
 
