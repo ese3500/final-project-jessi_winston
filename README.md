@@ -120,7 +120,12 @@ https://drive.google.com/file/d/1YAaOwP5Faa_h7_kkFoD2hJd_nlYyPl-F/view?usp=drive
 
 ### 2. Images
 
-[Insert final project images here]
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
 
 ### 3. Results
 
