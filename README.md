@@ -7,8 +7,7 @@
     * Github Pages Website URL: https://ese3500.github.io/final-project-jessi_winston/
     * Description of hardware: 2 Atmega328PBs, 2 ESP32 Feathers, Accelerometer, 4 Servo Motors, 1 Flex Sensor 
 
-/*
-## Final Project Proposal
+// ## Final Project Proposal
 
 ### 1. Abstract
 This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural interaction with the robot arm. 
