@@ -116,7 +116,7 @@ Add your slides to the Final Project Proposal slide deck in the Google Drive.
 
 ### 1. Video
 
-[Insert final project video here]
+https://drive.google.com/file/d/1YAaOwP5Faa_h7_kkFoD2hJd_nlYyPl-F/view?usp=drivesdk
 
 ### 2. Images
 
