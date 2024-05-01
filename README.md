@@ -7,7 +7,7 @@
     * Github Pages Website URL: [for final submission]
     * Description of hardware: (embedded hardware, laptop, etc) 
 
-## Final Project Proposal
+<!-- ## Final Project Proposal
 
 ### 1. Abstract
 This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural interaction with the robot arm. 
@@ -100,12 +100,9 @@ We will use a demonstration where the user needs to control the arm with the glo
 
 ### 12. Proposal Presentation
 
-Add your slides to the Final Project Proposal slide deck in the Google Drive.
+Add your slides to the Final Project Proposal slide deck in the Google Drive. -->
 
 ## Final Project Report
-
-Don't forget to make the GitHub pages public website!
-If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
 
