@@ -204,7 +204,7 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 ### 4. Conclusion
 
-This project taught us a lot about communication between deveices - mainly, I2C communication, which we used to send data from the accelerometer to the Atmega, and UART communication, which was used to send data in between the ESP32 and ATmega. These two communication protocols were probably the least utilized in the prior labs, so there was a lot of learning on the fly with respect to these concepts. As can be expected, we encountered challenges with regards to these aspects. Our primary struggles related to utlizing different serial ports to print and send data; it was nessecary to configure two different ports to have include these functionalities, and this required editing the UART library code. Additionally, we had to learn the structure of I2C protocals, which requires an IMU driver to communicate with I2C Driver (we used a IMU Driver found on git, more on this later). The I2C driver is hardware specific, and was implemented to read and write data between the accelerometer and the Atmega.
+This project taught us a lot about communication between deveices - mainly, I2C communication, which we used to send data from the accelerometer to the Atmega, and UART communication, which was used to send data in between the ESP32 and ATmega. These two communication protocols were probably the least utilized in the prior labs, so there was a lot of learning on the fly with respect to these concepts. As can be expected, we encountered challenges with regards to these aspects. Our primary struggles related to utlizing different serial ports to print and send data; it was nessecary to configure two different ports to have include these functionalities, and this required editing the UART library code. Additionally, we had to learn the structure of I2C protocals, which requires an IMU driver to communicate with I2C Driver (we used a I2C library and an IMU Driver found on git, more on this later). The I2C driver is hardware specific, and was implemented to read and write data between the accelerometer and the Atmega.
 
 We also ran into some challenges regarding the servo motors. Initially, we anticipated using a servo motor driver, however, because we recieved the driver later than expected, we decided to use seperate power supplies for the motors. Additionally, since we were driving four motors, we needed to the utilize two timers, since each timer has two output compare registers - OCRnA and OCRnB. Taken together, these solutions allowed us to drive 4 motors to control the arm.  
 
@@ -220,14 +220,48 @@ Fill in your references here as you work on your proposal and final submission. 
 
 IMU Driver: 
 
-## Github Repo Submission Resources
+The IMU driver we used was designed to interface with our accelerometer (the MPU6050). There are 7 methods in this library, with each method functionality listed below:
 
-You can remove this section if you don't need these references.
+Initialization (MPU_init()): This function initializes communication with the MPU6050 sensor via the I2C protocol. It sets the power management register (PWR_MGMT_1) to ensure the sensor is ready for communication.
 
-* [ESE5160 Example Repo Submission](https://github.com/ese5160/example-repository-submission)
-* [Markdown Guide: Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-* [Adobe free video to gif converter](https://www.adobe.com/express/feature/video/convert/video-to-gif)
-* [Curated list of example READMEs](https://github.com/matiassingers/awesome-readme)
-* [VS Code](https://code.visualstudio.com/) is heavily recommended to develop code and handle Git commits
-  * Code formatting and extension recommendation files come with this repository.
-  * Ctrl+Shift+V will render the README.md (maybe not the images though)
+
+Write Data (MPU_write(uint8_t u8addr, uint8_t u8data)): This function writes data to a specific register within the MPU6050 sensor. It utilizes I2C communication to send the address of the register followed by the data to be written.
+
+
+Read Data (MPU_read(uint8_t u8addr, int16_t *int16data)): This function reads data from a specified register within the MPU6050 sensor. It initiates communication with the sensor, requests data from the desired register, and then retrieves the data. The data is returned as a 16-bit integer.
+
+
+Timer Initialization (timer2_initialize()): This function initializes Timer 2, setting it up to generate interrupts at regular intervals. This is commonly used for timing purposes in microcontroller applications.
+
+
+Overflow Interrupt Service Routine (ISR(TIMER2_OVF_vect)): This interrupt service routine is executed when Timer 2 overflows. It then increments the overflow counter variable.
+
+
+Reading MPU6050 Data (get_MPU_readings()): This function reads accelerometer and gyroscope data from specific registers within the MPU6050 sensor. It then converts the raw sensor data into meaningful units (e.g., acceleration in meters per second squared and angular velocity in degrees per second). Additionally, it calculates the rotational angles around the X and Y axes (Roll and Pitch) using trigonometric functions.
+
+
+Yaw Calculation (yaw_calculation()): This function calculates the yaw angle (rotation around the Z-axis) using data from the gyroscope. It updates the yaw angle based on the gyroscope readings and elapsed time between updates, providing continuous tracking of the device's orientation.
+
+
+I2C Library:
+
+The I2C library we used provided 7 functions which initalized I2C on the Atmega, allowing the microcontoller to interact with our sensor. Each method is listed below.
+
+I2C_init(void): Initializes the I2C interface with a 100 kHz clock frequency by setting the appropriate prescaler and bit rate registers.
+
+I2C_start(void): Generates a START condition on the I2C bus, indicating the microcontroller's intention to communicate as a master device. This function waits for the START condition to be successfully transmitted.
+
+
+I2C_stop(void): Generates a STOP condition on the I2C bus, signaling the end of the communication session.
+
+
+I2C_write(uint8_t data): Writes a byte of data to the I2C bus. The data is loaded into the data register, and transmission begins after clearing the TWI interrupt flag. This function waits for the transmission to complete.
+
+
+I2C_readACK(): Reads a byte of data from the I2C bus and sends an acknowledgment signal to the server device to indicate successful reception. This function waits for the data to be received and the acknowledgment signal to be sent.
+
+
+I2C_readNACK(): Reads a byte of data from the I2C bus without sending an acknowledgment signal to the slave device. This function is typically used when reading the last byte of data from a server device.
+
+
+I2C_status(void): Retrieves the status of the I2C interface by masking and returning the relevant bits from the status register.
