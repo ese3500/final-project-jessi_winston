@@ -122,21 +122,23 @@ https://drive.google.com/file/d/1YAaOwP5Faa_h7_kkFoD2hJd_nlYyPl-F/view?usp=drive
 
 ![alt text](image.png)
 
+Arm and glove together!
+
 ![alt text](image-1.png)
 
-![alt text](image-2.png)
+Just Arm configuration
 
+![alt text](image-3.png)\
+
+Just glove configuration
 
 ### 3. Results
 
 Results for the Demo:
 On demo day, we presented  a robotic arms with 4 degrees of freedom controlled by a wired "glove" connected with an accelerometer and flex sensor. 
 
-Results from the Video:
+Results for the Video:
 In the video, we presented a robotic arms with 4 degrees of freedom controlled by a wireless "glove" connected with an accelerometer and flex sensor. 
-
-
-Results for final video:
 
 #### 3.1 Software Requirements Specification (SRS) Results
 
