@@ -1,13 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
-# RoboWave Project Proposal
+# RoboWave Project
 
     * Team Name: RoboWave
     * Team Members: Jessi Jha, Truong (Winston) Nguyen
     * Github Repository URL: https://github.com/ese3500/final-project-jessi_winston/tree/main
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc) 
+    * Github Pages Website URL: https://ese3500.github.io/final-project-jessi_winston/
+    * Description of hardware: 2 Atmega328PBs, 2 ESP32 Feathers, Accelerometer, 4 Servo Motors, 1 Flex Sensor 
 
-<!-- ## Final Project Proposal
+<!-- [comment]: <> ## Final Project Proposal
 
 ### 1. Abstract
 This project enables users to manipulate a robotic arm through intuitive hand movements. By leveraging sensors embedded within a wearable glove, the system captures and interprets gestures, translating them into precise mechanical responses. The goal is to create a seamless interface that feels like an extension of the user’s body, fostering a natural interaction with the robot arm. 
@@ -35,20 +35,28 @@ The primary users of this software will be hobbyists, educators, and researchers
 Here you will define any special terms acronyms or abbreviation you plan to use for software
 
 #### 4.4 Functionality
+
 - SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
+  
 - SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
+  
 - SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
+  
 - SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
+  
 - SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
+  
 - SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
+  
 - SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+  
 - SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
 ### 5. Hardware Requirements Specification (HRS)
 
 - HRS 01 – This robotic arm mechaniism shall be based on ATmega328P microcontroller.
 
-- HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
+-  HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will  communicate with the Atmega.
 
 - HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
 
@@ -100,7 +108,9 @@ We will use a demonstration where the user needs to control the arm with the glo
 
 ### 12. Proposal Presentation
 
-Add your slides to the Final Project Proposal slide deck in the Google Drive. -->
+Add your slides to the Final Project Proposal slide deck in the Google Drive.
+
+-->
 
 ## Final Project Report
 
@@ -114,23 +124,101 @@ Add your slides to the Final Project Proposal slide deck in the Google Drive. --
 
 ### 3. Results
 
-What were your results? Namely, what was the final solution/design to your problem?
+Results for the Demo:
+On demo day, we presented  a robotic arms with 4 degrees of freedom controlled by a wired "glove" connected with an accelerometer and flex sensor. 
+
+Results from the Video:
+In the video, we presented a robotic arms with 4 degrees of freedom controlled by a wireless "glove" connected with an accelerometer and flex sensor. 
+
+
+Results for final video:
 
 #### 3.1 Software Requirements Specification (SRS) Results
 
-Based on your quantified system performance, comment on how you achieved or fell short of your expected software requirements. You should be quantifying this, using measurement tools to collect data.
+Based on your quantified system performance, comment on how you achieved or fell short of your expected software requirements. You should be quantifying this, using measurement tools to collect data. (Winston?)
+
+- SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
+
+   - Final Project Reflection: We sampled the flex sensor every 500 milliseconds, but apart from that this requirement was fulfilled.
+  
+- SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
+
+  - Final Project Reflection: We sampled the accelerometer every 500 milliseconds, but apart from that this requirement was fulfilled.
+  
+- SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
+
+  - Final Project Reflection: We decided to map the sensor data using discrete intervals as opposed to a continuous interval. This design choice was to reduce noise/variation in the sensor readings (we didn't want the arm to be too sensitive). 
+  
+- SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
+
+  - Final Project Reflection: The response to gesture changes was about 500 milliseconds, but apart from that this requirement was fulfilled.
+  
+- SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
+
+  - Final Project Reflection: SRS 05 was not fulfilled for the final demp. We decided to omit this portion to ensure that the data coming from the sensors and being sent to the servos was correctly synchronized. 
+  
+- SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
+
+  - Final Project Reflection: Although we don't have a "hard stop" feature, based on the range of the servo and arm motion, we limited the OCRnA and OCRnB values (which determine the angles of the servos). 
+  
+- SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
+
+  - Similar to SRS specification 07 - we don't have a "gesture commands" feature, however, bosed on the range of the servo and arm motion, we limited the OCRnA/OCRnB values (which determine the angles of the servos). This is also related to our use of discrete OCRnA/OCRnB values (as opposed to a continuous range). 
+  
+- SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
+
+  - Final Project Reflection: SRS 08 was fulfilled
+
 
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
-Based on your quantified system performance, comment on how you achieved or fell short of your expected hardware requirements. You should be quantifying this, using measurement tools to collect data.
+- HRS 01 – This robotic arm mechanism shall be based on Atmega328PB microcontroller.
+
+   - Final Project Reflection: HRS 01 was fulfilled.
+  
+- HRS 02 - This project shall use an ESP32 to receive data from the flex sensors and accelerometer. The sensor shall detect changes in resistace based on the movement of the users fingers. This unit will communicate with the Atmega.
+
+   - Final Project Reflection: HRS 02 was modified. We used another Atmega to recieve data from the flex sensor and the accelerometer, which then send the data to the ESP 32. This was done to add complexity to the project, using bare metal serial communication. However, during the final demo, this requirement was not implemented due to last minute complications. However, in the demo video, the full functionality of this requirement is demonstrated. 
+
+- HRS 03 – An accelerometer shall be used for to detect the motion of the user's hand. This sensor shall use measurements of gravity and magnetic force of orient the position of the glove. This compment will commnicate with the ESP32.
+
+   - Final Project Reflection: HRS 03 was fulfilled.
+
+- HRS 04 – Flex sensors shall be used for to detect the motion of the user's hand.  The sensor shall detect This compment will commnicate with the ESP32.
+
+   - Final Project Reflection: HRS 04 was fulfilled.
+
+- HRS 05 - Servo motors shall be used to change the direction and motion of the robotic arm mechanism. These motors shall communicate with the Atmega.
+
+   - Final Project Reflection: HRS 05 was fulfilled.
+
+- HRS 06 - A servo motor driver shall be used to power the servo motors. The Atmega328PB will not be able to supply power to each of the motors; the driver shall supply voltages up to 36 V.
+
+   - Final Project Reflection: HRS 06 was not fulfilled. It turns out that the servo driver was not nessecarily needed. We used a wall power supply to power the motors, while the atmega controlled their PWM.  
+
+- HRS 07 - This project shall use a 3D printed robotic arm model. This model shall be controlled by the servo motors.
+
+   - Final Project Reflection: HRS 07 was fulfilled.
+
+- NEW: HRS 08 - This project shall use a logic level shifter to ensure functional communication between the ESP32 and the Atmega328PB; these two devices have different power levels, 3.3V and 5V, respectively. 
 
 ### 4. Conclusion
 
-Reflect on your project. Some questions to consider: What did you learn from it? What went well? What accomplishments are you proud of? What did you learn/gain from this experience? Did you have to change your approach? What could have been done differently? Did you encounter obstacles that you didn’t anticipate? What could be a next step for this project?
+This project taught us a lot about communication between deveices - mainly, I2C communication, which we used to send data from the accelerometer to the Atmega, and UART communication, which was used to send data in between the ESP32 and ATmega. These two communication protocols were probably the least utilized in the prior labs, so there was a lot of learning on the fly with respect to these concepts. As can be expected, we encountered challenges with regards to these aspects. Our primary struggles related to utlizing different serial ports to print and send data; it was nessecary to configure two different ports to have include these functionalities, and this required editing the UART library code. Additionally, we had to learn the structure of I2C protocals, which requires an IMU driver to communicate with I2C Driver (we used a IMU Driver found on git, more on this later). The I2C driver is hardware specific, and was implemented to read and write data between the accelerometer and the Atmega.
+
+We also ran into some challenges regarding the servo motors. Initially, we anticipated using a servo motor driver, however, because we recieved the driver later than expected, we decided to use seperate power supplies for the motors. Additionally, since we were driving four motors, we needed to the utilize two timers, since each timer has two output compare registers - OCRnA and OCRnB. Taken together, these solutions allowed us to drive 4 motors to control the arm.  
+
+By Demo day, the communication between the sensors and the Atmega was relatively smooth. and we were proud that we were able to ensure solid functionality of these protocols, since these are vital processes to the control of the arm. The PWM of the motors are controlled by the sensor readings, so ensuring realible connection from sensor to servo was critical. That being said, by demo day, there were ways in which we fell short. Mainly, we did not include wifi communication in the final demo. While we did have wifi communcation between the glove and arm before our demo, there were sychronization issues, so we decided to temporarily omit wireless communication. We brought the communication back for the final video, which can be seen at the link above. 
+
+In terms of project next steps, it would be useful to add remote control communication, perhaps through Blynk IOT. Additionally, making the arm more strucurally sound would also add to the longevity of the project. 
 
 ## References
 
 Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.
+
+3D Printed Arm: https://www.instructables.com/EEZYbotARM/
+
+IMU Driver: 
 
 ## Github Repo Submission Resources
 
