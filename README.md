@@ -7,6 +7,7 @@
     * Github Pages Website URL: https://ese3500.github.io/final-project-jessi_winston/
     * Description of hardware: 2 Atmega328PBs, 2 ESP32 Feathers, Accelerometer, 4 Servo Motors, 1 Flex Sensor 
 
+/*
 ## Final Project Proposal
 
 ### 1. Abstract
@@ -110,6 +111,8 @@ We will use a demonstration where the user needs to control the arm with the glo
 
 Add your slides to the Final Project Proposal slide deck in the Google Drive.
 
+*/
+
 ## Final Project Report
 
 ### 1. Video
@@ -137,31 +140,31 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 - SRS 01: The system shall measure the bend of flex sensors with a resolution of 10 bits, and the data shall be sampled every 50 milliseconds +/- 5 milliseconds.
 
-   - Final Project Reflection: SRS 01 
+   - Final Project Reflection: We sampled the flex sensor every 500 milliseconds, but apart from that this requirement was fulfilled.
   
 - SRS 02: The accelerometer shall measure 3-axis acceleration with 16-bit depth every 100 milliseconds +/- 10 milliseconds.
 
-  - Final Project Reflection: SRS 02 was fulfilled.
+  - Final Project Reflection: We sampled the accelerometer every 500 milliseconds, but apart from that this requirement was fulfilled.
   
 - SRS 03: The software shall map the sensor data to servo positions with a precision of 1 degree.
 
-  - Final Project Reflection: SRS 03 was fulfilled.
+  - Final Project Reflection: We decided to map the sensor data using discrete intervals as opposed to a continuous interval. This design choice was to reduce noise/variation in the sensor readings (we didn't want the arm to be too sensitive). 
   
 - SRS 04: The software shall update the robotic arm’s position in response to gesture changes within 50 milliseconds.
 
-  - Final Project Reflection: SRS 04 was fulfilled.
+  - Final Project Reflection: The response to gesture changes was about 500 milliseconds, but apart from that this requirement was fulfilled.
   
 - SRS 05: The system shall communicate via Bluetooth (or Wifi for Blynk app control), sending control signals from the glove to the robotic arm with a latency of less than 100 milliseconds.
 
-  - Final Project Reflection: SRS 05 was fulfilled.
+  - Final Project Reflection: SRS 05 was not fulfilled for the final demp. We decided to omit this portion to ensure that the data coming from the sensors and being sent to the servos was correctly synchronized. 
   
 - SRS 06: The system shall implement a hard stop feature to prevent servo motors from exceeding their maximum angle, protecting the gears from stripping.
 
-  - Final Project Reflection: SRS 06 was fulfilled.
+  - Final Project Reflection: Although we don't have a "hard stop" feature, based on the range of the servo and arm motion, we limited the OCRnA and OCRnB values (which determine the angles of the servos). 
   
 - SRS 07: The software shall not permit gesture commands that would cause the robotic arm to exceed its physical limitations.
 
-  - Final Project Reflection: SRS 07 was fulfilled.
+  - Similar to SRS specification 07 - we don't have a "gesture commands" feature, however, bosed on the range of the servo and arm motion, we limited the OCRnA/OCRnB values (which determine the angles of the servos). This is also related to our use of discrete OCRnA/OCRnB values (as opposed to a continuous range). 
   
 - SRS 08: The software shall not process input data that falls outside of predefined thresholds for sensor readings.
 
@@ -202,15 +205,13 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 ### 4. Conclusion
 
-Reflect on your project. Some questions to consider: What did you learn from it? What went well? What accomplishments are you proud of? What did you learn/gain from this experience? Did you have to change your approach? What could have been done differently? Did you encounter obstacles that you didn’t anticipate? What could be a next step for this project?
+This project taught us a lot about communication between deveices - mainly, I2C communication, which we used to send data from the accelerometer to the Atmega, and UART communication, which was used to send data in between the ESP32 and ATmega. These two communication protocols were probably the least utilized in the prior labs, so there was a lot of learning on the fly with respect to these concepts. As can be expected, we encountered challenges with regards to these aspects. Our primary struggles related to utlizing different serial ports to print and send data; it was nessecary to configure two different ports to have include these functionalities, and this required editing the UART library code. Additionally, we had to learn the structure of I2C protocals, which requires an IMU driver to communicate with I2C Driver (we used a IMU Driver found on git, more on this later). The I2C driver is hardware specific, and was implemented to read and write data between the accelerometer and the Atmega.
 
-Jessi Reflections:
+We also ran into some challenges regarding the servo motors. Initially, we anticipated using a servo motor driver, however, because we recieved the driver later than expected, we decided to use seperate power supplies for the motors. Additionally, since we were driving four motors, we needed to the utilize two timers, since each timer has two output compare registers - OCRnA and OCRnB. Taken together, these solutions allowed us to drive 4 motors to control the arm.  
 
-This project taught me a lot about communication between deveices - mainly, I2C communication, which we used to send data from the accelerometer to the Atmega, and UART communication, which was used to send data in between the ESP32 and ATmega. These two communication protocols were probably the least utilized in the prior labs, so there was a lot of learning on the fly with respect to these concepts. As can be expected, we encountered challenges with regards to these aspects. My primary struggles related to utlizing different serial ports to print and send data; it was nessecary to configure two different ports to have include these functionalities, and this required editing the UART library code. Additionally, I had to learn the structure of I2C protocals, which requires an IMU driver to communicate with I2C Driver (we used a IMU Driver found on git, more on this later). The I2C driver is hardware specific, and was implemented to read and write data between the accelerometer and the Atmega.
+By Demo day, the communication between the sensors and the Atmega was relatively smooth. and we were proud that we were able to ensure solid functionality of these protocols, since these are vital processes to the control of the arm. The PWM of the motors are controlled by the sensor readings, so ensuring realible connection from sensor to servo was critical. That being said, by demo day, there were ways in which we fell short. Mainly, we did not include wifi communication in the final demo. While we did have wifi communcation between the glove and arm before our demo, there were sychronization issues, so we decided to temporarily omit wireless communication. We brought the communication back for the final video, which can be seen at the link above. 
 
-By Demo day, the communication between the sensors and the Atmega was relatively smooth. I am proud that were able able to ensure solid functionality of these protocols, as these are vital processes to the control of the arm. The PWM of the motors were controlled by the sensor readings, so ensuring realible connection from sensor to servo, was critical. That being said, by demo day, there were ways in which we fell short. Mainly, we did not include wifi communication in the final demo. While we did have wifi communcation between the glove and arm before our demo, we were unsure of the quality of data being transmitted (there were some sychronization errors). Since we were on a tight deadline, we decided to omit the wifi communication temporarily. We brought the communication back for the final video, which can be seen at the link above. 
-
-In terms of project next steps, I think it would be useful to add remote control communication, perhaps through Blynk IOT. Additionally, making the arm more strucurally sound would also add to the longvevity of this project. 
+In terms of project next steps, it would be useful to add remote control communication, perhaps through Blynk IOT. Additionally, making the arm more strucurally sound would also add to the longevity of the project. 
 
 ## References
 
